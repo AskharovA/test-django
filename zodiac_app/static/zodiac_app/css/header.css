@@ -1,0 +1,37 @@
+.header {
+    height: 150px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -45px;
+}
+
+.nav {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+}
+
+.nav>li>a {
+    color: rgb(177, 177, 177);
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease 0.2s;
+    display: block;
+    width: 88px;
+    height: 70px;
+}
+
+.nav>li>a:hover {
+    /* background-color: rgba(247, 11, 235, 0.101); */
+    background-color: rgba(237, 237, 107, 0.063);
+    border-bottom: solid white 2px;
+    color: white;
+}
+
+.small-logos {
+    position: absolute;
+    z-index: -1;
+}
+

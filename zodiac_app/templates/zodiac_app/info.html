@@ -1,0 +1,45 @@
+{% extends 'zodiac_app/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'zodiac_app/css/header.css' %}"> {% endblock %}
+{% block nav %}
+<nav>
+    <div class="header">
+        <ul class="nav">
+            <img src="{% static 'zodiac_app/img/small-logos.png' %}" alt="" class="small-logos">
+            {% for zd in zodiacs %}
+                <li><a href="{{ zd.slug }}"></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <h1 class="zodiac_tag">{{ zodiac.name }}</h1>
+    <h3>Характеристики знака зодиака</h3>
+    <div class="image">
+        <img src="../static/zodiac_app/img/{{zodiac.image}}" alt="" class="zodiac_image">
+    </div>
+    <p class="zodiac_text start_text">
+        {{ zodiac.text }}
+    </p>
+    {% if zodiac.harakter %}
+        <h2>Характер</h2>
+        <p class="zodiac_text harakter">
+            {{ zodiac.harakter }}
+        </p>
+    {% endif %}
+    {% if zodiac.sides %}
+        <h2>Сильные и слабые стороны</h2>
+        <p class="zodiac_text sides">
+            {{ zodiac.sides }}
+        </p>
+    {% endif %}
+    {% if zodiac.sovmestimost %}
+        <h2>Совместимость с другими знаками зодиака</h2>
+        <p class="zodiac_text sovmestimost">
+            {{ zodiac.sovmestimost }}
+        </p>
+    {% endif %}
+{% endblock %}

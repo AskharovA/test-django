@@ -1,0 +1,41 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'zodiac_app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'zodiac_app/css/main.css' %}">
+    <script src="{% static 'zodiac_app/js/script.js' %}" defer></script>
+    {% block link %} {% endblock %}
+</head>
+<body>
+    <div class="menu">
+        <ul class="main_menu">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/horoscope/oven">Знаки зодиака</a></li>
+            <li><a href="#">Источник</a></li>
+            <li><a href="#">О проекте</a></li>
+        </ul>
+    </div>
+    <div class="base">
+            {% block nav %}
+            {% endblock %}
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+            <ul class="footer_list">
+                <li class="footer_text"><a href="/">Главная страница</a></li>
+                <li class="footer_text"><a href="#">Источник</a></li>
+                <li class="footer_text"><a href="#">О проекте</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
